@@ -1,0 +1,9 @@
+# Constraints in Sql
+
+1. Null
+2. Not Null
+3. Primary Key
+4. Foreign Key
+5. Default
+6. Unique
+7. Check
