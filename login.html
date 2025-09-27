@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Login Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <h1 style="text-align: center;">LogIn Page Example</h1>
+    <form name="loginFrm" method="post" onsubmit="return loginFun()" action="welcome.html">
+        <p style="text-align: center;">
+            <label for="uname">Username</label>
+            <input type="text" name="txtUser" required>
+            <br /> <br />
+            <label for="password">Password</label>
+            <input type="password" name="texPwd" required>
+            <br /> <br />
+            <input type="submit" value="Login Here" onclick="loginFun()">
+        </p>
+    </form>
+    <script type="text/javascript">
+
+        function loginFun() {
+            var userName = loginFrm.txtUser.value;
+            var password = loginFrm.texPwd.value;
+
+            if (userName != "" && password != "") {
+              if (userName == 'Ujjawal' && password == "ujja@123")
+                return true;
+              else {
+                alert("Please check username / password");
+                return false;
+              }
+            } else {
+                alert("Please enter ur username and password to proceed");
+                return false;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
