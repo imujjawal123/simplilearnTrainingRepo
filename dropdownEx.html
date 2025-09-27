@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Radio Button Example</h1>
+
+    <form name="frmTest">
+        <p style="text-align: center;">
+            <label for="">Select Your City</label>
+            <select name="ddlCity" onchange="demoDropdownList()">
+                <option value="-1">Select Your City</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Noida">Noida</option>
+            </select>
+        </p>
+        <p style="text-align: center;" id="resInfo"></p>
+    </form>
+    <script type="text/javascript">
+        function demoDropdownList() {
+            var cityInfo = frmTest.ddlCity.value;
+            if (cityInfo != "-1")
+                document.getElementById("resInfo").innerHTML = "Your city is " + cityInfo;
+            else {
+                document.getElementById("resInfo").innerHTML = " ";
+                alert("Please select your city");
+            }
+        }
+    </script>
+</body>
+
+</html>

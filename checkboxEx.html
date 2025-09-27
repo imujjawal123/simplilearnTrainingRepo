@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Checkbox Example</h1>
+
+    <form name="frmTest">
+
+        <h3 style="text-align: center;">Bank Payment Method</h3>
+        <p style="text-align: center;">
+            <label for="per-name">Person Name</label>
+            <input type="text" name="textPname" />
+            <br />
+            <br />
+            <label for="hobbies">Hobbies</label>
+            <br />
+            <input type="checkbox" name="chkHob1" value="Gardening" />
+            <label for="gardening">Gardening</label>
+            <input type="checkbox" name="chkHob2" value="Swimming" />
+            <label for="swimming">Swimming</label>
+            <input type="checkbox" name="chkHob3" value="Reading Books" />
+            <label for="reading">Reading</label>
+            <input type="checkbox" name="chkHob4" value="Playing Cricket" />
+            <label for="cricket">Playing Cricket</label>
+            <br /><br />
+            <input type="button" value="Click Me" onclick="testCheckbox()" />
+        </p>
+
+        <p style="text-align: center;" id="resInfo">
+
+        </p>
+    </form>
+    <!-- Js Code -->
+    <script type="text/javascript">
+
+        function testCheckbox() {
+            if (frmTest.textPname.value != "") {
+                var flag = false;
+                var personInfo = frmTest.textPname.value + "<br />";
+                personInfo += " having hobbies <br />";
+                if (frmTest.chkHob1.checked) {
+                    personInfo += frmTest.chkHob1.value + "<br />";
+                    flag = true;
+                }
+                if (frmTest.chkHob2.checked) {
+                    personInfo += frmTest.chkHob2.value + "<br />";
+                    flag = true;
+                }
+                if (frmTest.chkHob3.checked) {
+                    personInfo += frmTest.chkHob3.value + "<br />";
+                    flag = true;
+                }
+                if (frmTest.chkHob4.checked) {
+                    personInfo += frmTest.chkHob4.value + "<br />";
+                    flag = true;
+                }
+                if (flag == true)
+                    document.getElementById("resInfo").innerHTML = personInfo;
+                else
+                    alert("Please select atleast any one hobby");
+
+            } else
+                alert("Please enter person name");
+
+        }
+
+    </script>
+</body>
+
+</html>

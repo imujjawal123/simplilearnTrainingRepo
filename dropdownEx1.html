@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Dropdown List</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body onload="loadItems();">
+    <h1 style="text-align: center;">Dropdown List Example</h1>
+
+    <form name="frmTest">
+        <p style="text-align: center;">
+            <select name="ddlDay" id="ddlDay">
+            </select>
+            <select name="ddlMonth" id="ddlMonth">
+            </select>
+            <select name="ddlYear" id="ddlYear">
+            <input type="button" value="Get Date" onclick="getDate()" />
+        </p>
+        <p style="text-align: center;" id="resInfo"></p>
+    </form>
+    <script type="text/javascript">
+        function loadItems() {
+
+            var days = "<option value='-1'>Day</option>";
+
+            for (let i = 1; i <= 31; i++) {
+                days += "<option value='" + i + "'>" + i + "</option>";
+            }
+
+            document.getElementById("ddlDay").innerHTML = days;
+
+            var monthName = ['Jan', 'Feb', 'Mar', 'Apr', 'May',
+                'Jun', 'Jul', 'Aug', 'Sep', 'Oct',
+                'Nov', 'Dec'];
+
+            var mnth = "<option value='-2'>Month</option>";
+
+            for (let i = 0; i < monthName.length; i++) {
+                mnth += "<option value='" + monthName[i] + "'>" + monthName[i] + "</option>";
+            }
+
+            document.getElementById("ddlMonth").innerHTML = mnth;
+
+            var yrs = "<option value='-3'>Year</option>";
+
+            for (let i = 1968; i <= 2025; i++) {
+                yrs += "<option value='" + i + "'>" + i + "</option>";
+            }
+
+            document.getElementById("ddlYear").innerHTML = yrs;
+
+        }
+
+        function getDate() {
+            if (frmTest.ddlDay.value != "-1" && frmTest.ddlDay.value != "-2" && frmTest.ddlDay.value != "-3"){
+                var day = frmTest.ddlDay.value;
+                var mnth = frmTest.ddlMonth.value;
+                var yrs = frmTest.ddlYear.value;
+                var dob = day + "-" + mnth + "-" + yrs;
+                document.getElementById("resInfo").innerHTML = dob;
+            }
+            else {
+                alert("Please select your dob");
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

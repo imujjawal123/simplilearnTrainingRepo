@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Show Hide Checkbox Example</h1>
+
+    <form name="frmTest">
+
+        <p style="text-align: center;">
+            <input type="checkbox" name="chk1" checked onclick="testImage()" />
+            <label for="" id="txtInfo">Hide</label>
+        <div style="width: 100%; display: block;" id="getImg">
+            <img src="img1.png" alt="img" style="width: 100%; height: 500px;">
+        </div>
+        </p>
+
+        <p style="text-align: center;" id="resInfo">
+
+        </p>
+    </form>
+    <!-- Js Code -->
+    <script type="text/javascript">
+
+        function testImage() {
+            if (frmTest.chk1.checked == true){
+                document.getElementById("getImg").style.display = 'block';
+                document.getElementById("txtInfo").innerText = 'Hide';
+            }
+            else{
+                document.getElementById("getImg").style.display = 'none';
+                document.getElementById("txtInfo").innerText = 'Show';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
